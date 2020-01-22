@@ -9,4 +9,4 @@ New-Item $piDrive.Path\ssh
 $wifiFile -Replace 'ssid="', 'ssid="$wifiName"'
 $wifiFile -Replace 'psk="', 'psk="$wifiPass"'
 
-Set-Content $piDrive.Path\wpa_supplicant.conf
+Set-Content -path $piDrive.Path\wpa_supplicant.conf -value $wifiFile
