@@ -7,5 +7,5 @@ This a temp measure until ssh keys are created
 
 
 # TODO
-Create SSH keys for nodes
+Create SSH keys for nodes 👌
 Automate keeping nodes upto date
