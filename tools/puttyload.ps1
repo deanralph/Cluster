@@ -1,11 +1,20 @@
 $servers = Get-Content servercreds.txt
+$splitLine = $line.Split(" ",[StringSplitOptions]'RemoveEmptyEntries')
+$serverAdder = $splitLine[0]
+$serverPW = $splitLine[1]
+$os = Get-ChildItem -path env:OS
 
 foreach ($line in $servers){
-    $splitLine = $line.Split(" ",[StringSplitOptions]'RemoveEmptyEntries')
-    if (Test-Connection $splitLine[0]){
-        putty.exe -ssh pi@$splitLine[0] -pw $splitLine[1]
+    
+    if (Test-Connection $serverAdder){
+        if($os.Value -contains "Windows_NT"){
+            putty.exe -ssh pi@$serverAdder -pw $serverPW
+        }
+        Else{
+            putty -ssh pi@$serverAdder -pw $serverPW
+        }
     }
     Else{
-        echo "$splitLine[0] Offline"
+        echo "$serverAdder Offline"
     }
 }
