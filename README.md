@@ -7,5 +7,6 @@ This a temp measure until ssh keys are created
 
 
 # TODO
-Create SSH keys for nodes 👌
-Automate keeping nodes upto date
+*Create SSH keys for nodes 👌
+*Automate keeping nodes upto date - done under another project
+*Emalgumate piScripts project into this one
